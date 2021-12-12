@@ -27,21 +27,15 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+       
       >
         <main>{children}</main>
         <footer
-          style={{
-            marginTop: `2rem`,
-          }}
+          className="bg-black"
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <div className="container mx-auto py-10 text-center">
+          <span className="text-gray-500">&copy; {new Date().getFullYear()} Anthony DiDomenico</span>
+          </div>
         </footer>
       </div>
     </>

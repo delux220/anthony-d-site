@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+  'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -29,6 +30,21 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+     resolve: 'gatsby-plugin-postcss',
+        options: {
+            postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+         },
+     },
+     {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `https://immense-inlet-26477.herokuapp.com/api`,
+        queryLimit: 1000, // Defaults to 100
+        collectionTypes: [`event`],
+        singleTypes: [],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
