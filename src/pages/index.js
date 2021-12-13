@@ -40,7 +40,7 @@ const IndexPage = () => {
   return <Layout>
     <Seo title="Home" />
     <div className="bg-gradient-to-r from-gray-900 to-black">
-      <div className="bg-contain lg:bg-fixed container mx-auto h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/brushed.png')"}}>
+      <div className="bg-contain lg:bg-fixed container mx-auto h-[80vh] md:max-h-screen md:h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/brushed.png')"}}>
         <div className="relative flex items-start justify-center md:items-center h-full">
           <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto">
           <h1 className="text-white font-sans text-5xl mb-5 font-bold hidden md:block">Anthony DiDomenico</h1>
