@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Anthony DiDomenico`,
+    description: `Stand up Comedian & Podcast Host`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://anthonydidomenico.gatsbyjs.io/`,
   },
   plugins: [
   'gatsby-plugin-postcss',
@@ -39,12 +39,33 @@ module.exports = {
          },
      },
      {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "SWAPI",
+        // This is the field under which it's accessible
+        fieldName: "swapi",
+        // URL to query from
+        url: "https://immense-inlet-26477.herokuapp.com/graphql",
+      },
+    },
+     {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://immense-inlet-26477.herokuapp.com/api`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [`event`],
-        singleTypes: [],
+        singleTypes: [{
+          name: `podcast`,
+          endpoint: `podcast?populate=*`,
+        },{
+          name: `about-page`,
+          endpoint: `about-page?populate=*`,
+        },
+        {
+          name: `social-media`,
+          endpoint: `social-media?populate=*`,
+        }],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

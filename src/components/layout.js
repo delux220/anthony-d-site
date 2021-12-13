@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-       
+       className="bg-gradient-to-r from-gray-900 to-black"
       >
         <main>{children}</main>
         <footer

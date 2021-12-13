@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import Layout from "../components/layout"
 import Seo from "../components/seo";
 import moment from 'moment';
@@ -10,6 +8,8 @@ import moment from 'moment';
 const IndexPage = () => {
 
   const data = useStaticQuery(query);
+
+  const social = data.strapiSocialMedia.data.attributes;
 
   const [noEvents, setNoEvents] = React.useState(false);
 
@@ -40,20 +40,23 @@ const IndexPage = () => {
   return <Layout>
     <Seo title="Home" />
     <div className="bg-gradient-to-r from-gray-900 to-black">
-      <div className="bg-contain bg-fixed container mx-auto h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/Removal-256_n4abys.png')"}}>
-        <div className="flex justify-center items-center h-full">
-          <div className="md:w-1/2 text-center mx-auto">
+      <div className="bg-contain lg:bg-fixed container mx-auto h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/Removal-256_n4abys.png')"}}>
+        <div className="relative flex items-start justify-center md:items-center h-full">
+          <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto">
           <h1 className="text-white font-sans text-5xl mb-5 font-bold">Anthony DiDomenico</h1>
-          <h3 className="text-white font-sans">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
-          <div className="mt-5">
-          <a href="#">
-            <FontAwesomeIcon icon={faFacebook} className="text-white text-2xl"/>
+          <h3 className="text-white font-sans block">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
+          <div className="mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10" style={{bottom:'25px', left:0}}>
+          <a href={social.Facebook} target="_blank">
+            <img src="/fb.svg" className="w-5 h-5 mx-3"/>
           </a>
-          <a href="#">
-            <FontAwesomeIcon icon={faTwitter} className="text-white ml-5 text-2xl "/>
+          <a href={social.Twitter} target="_blank">
+            <img src="/twitter.svg" className="w-5 h-5 mx-3"/>
           </a>
-          <a href="#">
-            <FontAwesomeIcon icon={faInstagram} className="text-white ml-5 text-2xl "/>
+          <a href={social.Instagram} target="_blank">
+            <img src="/ig.svg" className="w-5 h-5 mx-3"/>
+          </a>
+          <a href={social.TikTok} target="_blank">
+            <img src="/tiktok.svg" className="w-5 h-5 mx-3"/>
           </a>
           </div>
 
@@ -71,7 +74,7 @@ const IndexPage = () => {
           </div>
         </form>
       </div>
-      <div className="container mx-auto p-10 pb-20">
+      <div className="container mx-auto p-10 pb-20" id="events">
         <div className="text-center py-10">
           <h1 className="text-white mb-10">Upcoming Shows</h1>
         </div>
@@ -93,12 +96,12 @@ const IndexPage = () => {
                       <strong className="text-white block">{moment(event.attributes.DateTime).format('MMMM Do')}</strong>
                       <span className="text-gray-400 text-lg font-bebas uppercase">{moment(event.attributes.DateTime).format('h:mm a')}</span>
                     </div>
-                    <div>
-                      <h3 className="text-white font-sans block">{event.attributes.Title}</h3>
-                      <span className="text-gray-400 text-lg font-bebas uppercase">{event.attributes.VenueName}, {event.attributes.VenueAddress}</span>
+                    <div className=" col-span-2 md:col-span-1">
+                      <h3 className="text-white font-sans ">{event.attributes.Title}</h3>
+                      <span className="text-gray-400 text-lg font-bebas uppercase block">{event.attributes.VenueName}, {event.attributes.VenueAddress}</span>
                     </div>
-                    <div className="text-right pt-3">
-                      <a href="#" className="py-5 px-10 bg-yellow-500 mt-3">Details</a>
+                    <div className="text-right pt-3 col-span-3 md:col-span-1">
+                      <a href="#" className="py-3 md:py-5 px-10 bg-yellow-500 mt-3 block md:inline text-center">Details</a>
                     </div>
                   </div>
 
@@ -114,6 +117,16 @@ const IndexPage = () => {
 };
 const query = graphql`
 query MyQuery {
+  strapiSocialMedia {
+    data {
+      attributes {
+        Facebook
+        Instagram
+        TikTok
+        Twitter
+      }
+    }
+  }
   allStrapiEvent (sort: { fields: data___attributes___DateTime, order:ASC}) {
     edges {
       node {
