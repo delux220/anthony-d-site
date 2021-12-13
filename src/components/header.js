@@ -52,7 +52,7 @@ const Header = ({ siteTitle }) => {
 
 
 
-      <div className=" flex absolute justify-between  w-full px-10" style={{bottom:'25px', left:0}}>
+      <div className=" flex fixed justify-between  w-full px-10" style={{bottom:'25px', left:0}}>
           <a href={social.Facebook} target="_blank">
             <img src="/fb.svg" className="w-5 h-5 mx-3"/>
           </a>
