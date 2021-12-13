@@ -39,17 +39,6 @@ module.exports = {
          },
      },
      {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // This type will contain remote schema Query type
-        typeName: "SWAPI",
-        // This is the field under which it's accessible
-        fieldName: "swapi",
-        // URL to query from
-        url: "https://immense-inlet-26477.herokuapp.com/graphql",
-      },
-    },
-     {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `https://immense-inlet-26477.herokuapp.com/api`,
