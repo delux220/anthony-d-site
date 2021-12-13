@@ -22,7 +22,10 @@ const Header = ({ siteTitle }) => {
     </div>
     
     </div>
-    <div className="text-right z-10 fixed w-screen md:hidden" style={{top:0, left:0}}>
+    <div className="md:hidden">
+      <Link to="/"><span className="text-yellow-500  font-bebas  text-2xl font-bold">ANTHONY DiDOMENICO</span></Link>
+    </div>
+    <div className="text-right z-10 fixed w-screen md:hidden" style={{top:10, left:0}}>
       <button className="text-gray-500  w-10 h-10 relative focus:outline-none bg-black" onClick={() => setOpen(!open)}>
           <span className="sr-only">Open main menu</span>
           <div className="block w-5 absolute left-1/2 top-1/2   transform  -translate-x-1/2 -translate-y-1/2">

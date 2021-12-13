@@ -16,7 +16,7 @@ const PodcastPage = () => {
   console.log(podcast);
   return <Layout>
     <Seo title="Home" />
-    <div className="container mx-auto grid md:grid-cols-3 py-20 gap-5 md:px-0 px-5">
+    <div className="container mx-auto grid md:grid-cols-3 py-20 gap-5 md:px-0 px-5 min-h-screen">
       <div className="col-span-3 md:col-span-1">
           <GatsbyImage image={podcast.CoverArt.data.attributes.localFile.childImageSharp.gatsbyImageData} className="w-full"/>
 
@@ -27,6 +27,9 @@ const PodcastPage = () => {
           {podcast.Description}
         </ReactMarkdown>
         <a href={podcast.Link} className="py-5 px-10 bg-yellow-500 text-center block md:inline">Listen</a>
+        <h3 className="mt-10 text-white">Latest Episode</h3>
+        <div className="mt-5">
+<iframe src="https://open.spotify.com/embed/show/4iew4PiRlzdqDmFoDMHxiT?utm_source=generator&theme=0" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>      </div>
       </div>
 
      </div>
