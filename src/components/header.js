@@ -1,8 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby";
 
 const Header = ({ siteTitle }) => {
+
+  const data = useStaticQuery(query);
+
+  const social = data.strapiSocialMedia.data.attributes;
 
   const [open, setOpen] = React.useState(false);
 
@@ -16,7 +20,8 @@ const Header = ({ siteTitle }) => {
         <Link to="/" className="text-white font-bebas uppercase text-2xl">Home</Link>
         <Link to="/about" className="text-white font-bebas uppercase text-2xl ml-5">About</Link>
         <Link to="/podcast" className="text-white font-bebas uppercase text-2xl ml-5">KMF Podcast</Link>
-        <Link to="/#events" className="text-white font-bebas uppercase text-2xl ml-5">Events</Link>
+        <Link to="/#events" className="text-white font-bebas uppercase text-2xl ml-5">Shows</Link>
+        <a href="https://www.patreon.com/kmfpodcast" target="_blank"  className="text-white font-bebas uppercase text-2xl ml-5">Patreon</a>
         <Link to="/contact" className="text-white font-bebas uppercase text-2xl ml-5">Contact</Link>
       </div>
     </div>
@@ -37,11 +42,30 @@ const Header = ({ siteTitle }) => {
     </div>
     <div className={`fixed ${open?"block":"hidden"} w-screen h-screen bg-black/90 flex justify-center items-center`} style={{top:0, left:0}}>
       <div>
-      <Link to="/" className="text-white font-bebas uppercase text-2xl">Home</Link>
-      <Link to="/about" className="text-white font-bebas uppercase text-2xl ml-3">About</Link>
-      <Link to="/podcast" className="text-white font-bebas uppercase text-2xl ml-3">KMF Podcast</Link>
-      <Link to="/#events" className="text-white font-bebas uppercase text-2xl ml-3">Events</Link>
-      <Link to="/contact" className="text-white font-bebas uppercase text-2xl ml-3">Contact</Link>
+      <Link to="/" className="text-white font-bebas uppercase text-2xl block">Home</Link>
+      <Link to="/about" className="text-white font-bebas uppercase text-2xl block">About</Link>
+      <Link to="/podcast" className="text-white font-bebas uppercase text-2xl  block">KMF Podcast</Link>
+      <Link to="/#events" onClick={() => setOpen(false)}className="text-white font-bebas uppercase text-2xl block">Events</Link>
+      <a href="https://www.patreon.com/kmfpodcast" target="_blank"  className="text-white font-bebas uppercase text-2xl block">Patreon</a>
+        
+      <Link to="/contact" className="text-white font-bebas uppercase text-2xl block">Contact</Link>
+
+
+
+      <div className=" flex absolute justify-between  w-full px-10" style={{bottom:'25px', left:0}}>
+          <a href={social.Facebook} target="_blank">
+            <img src="/fb.svg" className="w-5 h-5 mx-3"/>
+          </a>
+          <a href={social.Twitter} target="_blank">
+            <img src="/twitter.svg" className="w-5 h-5 mx-3"/>
+          </a>
+          <a href={social.Instagram} target="_blank">
+            <img src="/ig.svg" className="w-5 h-5 mx-3"/>
+          </a>
+          <a href={social.TikTok} target="_blank">
+            <img src="/tiktok.svg" className="w-5 h-5 mx-3"/>
+          </a>
+          </div>
       </div>
     </div>
   </header>
@@ -54,5 +78,21 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
+
+const query = graphql`
+query MyQuery5 {
+  strapiSocialMedia {
+    data {
+      attributes {
+        Facebook
+        Instagram
+        TikTok
+        Twitter
+      }
+    }
+  }
+}`;
+
+
 
 export default Header

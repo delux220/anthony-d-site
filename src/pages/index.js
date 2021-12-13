@@ -40,11 +40,11 @@ const IndexPage = () => {
   return <Layout>
     <Seo title="Home" />
     <div className="bg-gradient-to-r from-gray-900 to-black">
-      <div className="bg-contain lg:bg-fixed container mx-auto h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/Removal-256_n4abys.png')"}}>
+      <div className="bg-contain lg:bg-fixed container mx-auto h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/brushed.png')"}}>
         <div className="relative flex items-start justify-center md:items-center h-full">
           <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto">
-          <h1 className="text-white font-sans text-5xl mb-5 font-bold">Anthony DiDomenico</h1>
-          <h3 className="text-white font-sans block">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
+          <h1 className="text-white font-sans text-5xl mb-5 font-bold hidden md:block">Anthony DiDomenico</h1>
+          <h3 className="text-white font-sans block mt-3 md:mt-0">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
           <div className="mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10" style={{bottom:'25px', left:0}}>
           <a href={social.Facebook} target="_blank">
             <img src="/fb.svg" className="w-5 h-5 mx-3"/>
@@ -63,16 +63,19 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto bg-blue-500 p-10">
+      <div className=" mx-auto bg-gray-900 p-10">
+        <div className="container mx-auto">
         <div>
-          <h3 className="text-white mx-auto md:w-1/2 w-full mb-5">Join my mailing list</h3>
+          <h3 className="text-white mx-auto md:w-1/2 w-full mb-3 text-center">Join my mailing list</h3>
+          <p className="text-center font-thin font-sans text-gray-100 mb-5 text-sm">Get updates about Keep Moving Forward, upcoming shows, and other projects.</p>
         </div>
         <form>
           <div className="flex mx-auto md:w-1/2 w-full">
-            <input type="email" name="" placeholder="Email Address" className="p-5 bg-white border-b font-sans w-2/3"/>
-            <button className="p-5 bg-black text-white font-sans w-1/3">SUBSCRIBE</button>
+            <input type="email" name="" placeholder="Email Address" className="px-5 py-3 bg-white border-b font-sans w-2/3"/>
+            <button className="px-5 py-3 bg-yellow-500 text-black font-bebas md:font-sans w-1/3">SUBSCRIBE</button>
           </div>
         </form>
+      </div>
       </div>
       <div className="container mx-auto p-10 pb-20" id="events">
         <div className="text-center py-10">
