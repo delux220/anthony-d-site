@@ -1,9 +1,7 @@
 import * as React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby";
+import {  graphql, useStaticQuery } from "gatsby";
 import {  GatsbyImage } from "gatsby-plugin-image";
 import ReactMarkdown from 'react-markdown'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import Layout from "../components/layout"
 import Seo from "../components/seo";
 import moment from 'moment';
@@ -13,7 +11,6 @@ const PodcastPage = () => {
   const data = useStaticQuery(query);
 
   const podcast = data.strapiPodcast.data.attributes;
-  console.log(podcast);
   return <Layout>
     <Seo title="Home" />
     <div className="container mx-auto grid md:grid-cols-3 py-20 gap-5 md:px-0 px-5 min-h-screen">

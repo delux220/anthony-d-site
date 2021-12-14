@@ -54,6 +54,10 @@ module.exports = {
         {
           name: `social-media`,
           endpoint: `social-media?populate=*`,
+        },
+        {
+          name: `contact-page`,
+          endpoint: `contact-page?populate=*`,
         }],
       },
     },
