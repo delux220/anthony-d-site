@@ -56,11 +56,11 @@ const ContactPage = () => {
       </div>
       <div className="col-span-2 md:col-span-1">
       <GoogleReCaptchaProvider reCaptchaKey="6LdhcqAdAAAAAOA1PDTtqjrcFR-OBm7gbrwY7lf9">
-          <form action={page.GetFormURL} method="POST" target="_blank" onSubmit={validate}>
+          <form action={page.GetFormURL} method="post" target="_blank" onSubmit={validate}>
             <label className="font-bebas text-gray-400 block uppercase">Name</label>
             <input type="text" name="name" maxlength="255" className="p-3 bg-white block w-full mb-5" value={name} onChange={(e) => setName(e.value)}/>
             <label className="font-bebas text-gray-400 block uppercase">Email Address</label>
-            <input type="text" name="name" maxlength="255" className="p-3 bg-white block w-full mb-5" value={email} onChange={(e) => setEmail(e.value)}/>
+            <input type="email" name="email" maxlength="255" className="p-3 bg-white block w-full mb-5" value={email} onChange={(e) => setEmail(e.value)}/>
             <label className="font-bebas text-gray-400 block uppercase">Message</label>
             <textarea name="message" maxlength="255" className="p-3 bg-white block w-full mb-8" value={message} onChange={(e) => setMessage(e.value)} rows="4"></textarea>
             <GoogleReCaptcha
