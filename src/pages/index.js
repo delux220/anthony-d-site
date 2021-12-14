@@ -104,7 +104,7 @@ const IndexPage = () => {
                       <span className="text-gray-400 text-lg font-bebas uppercase block">{event.attributes.VenueName}, {event.attributes.VenueAddress}</span>
                     </div>
                     <div className="text-right pt-3 col-span-3 md:col-span-1">
-                      <a href="#" className="py-3 md:py-5 px-10 bg-yellow-500 mt-3 block md:inline text-center">Details</a>
+                      <a href={event.attributes.Link} target="_blank" className="py-3 md:py-5 px-10 bg-yellow-500 mt-3 block md:inline text-center">Details</a>
                     </div>
                   </div>
 
@@ -139,6 +139,7 @@ query MyQuery {
             Title
             VenueAddress
             VenueName
+            Link
           }
         }
       }

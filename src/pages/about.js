@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons';
 import Layout from "../components/layout"
 import Seo from "../components/seo";
 import moment from 'moment';
@@ -16,7 +14,7 @@ const AboutPage = () => {
   const social = data.strapiSocialMedia.data.attributes;
 
   return <Layout>
-    <Seo title="Home" />
+    <Seo title="About" />
     <div className="container mx-auto grid md:grid-cols-3 py-20 gap-5 md:px-0 px-5 min-h-screen">
       <div className="col-span-3 md:col-span-1">
           <GatsbyImage image={page.Photo.data.attributes.localFile.childImageSharp.gatsbyImageData} className="w-full"/>

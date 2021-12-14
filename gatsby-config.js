@@ -43,7 +43,7 @@ module.exports = {
       options: {
         apiURL: `https://immense-inlet-26477.herokuapp.com/api`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`event`],
+        collectionTypes: [{name: `event`, endpoint: `events?sort=DateTime:asc`}],
         singleTypes: [{
           name: `podcast`,
           endpoint: `podcast?populate=*`,
@@ -51,13 +51,11 @@ module.exports = {
           name: `about-page`,
           endpoint: `about-page?populate=*`,
         },
+        'social-media',
+        'contact-page',
         {
-          name: `social-media`,
-          endpoint: `social-media?populate=*`,
-        },
-        {
-          name: `contact-page`,
-          endpoint: `contact-page?populate=*`,
+          name: `seo`,
+          endpoint: `seo?populate=*`,
         }],
       },
     },
