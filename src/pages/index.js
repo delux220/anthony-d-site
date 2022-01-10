@@ -45,10 +45,10 @@ const IndexPage = () => {
           <h3 className="text-white mx-auto md:w-1/2 w-full mb-3 text-center">Join my mailing list</h3>
           <p className="text-center font-thin font-sans text-gray-100 mb-5 text-sm">Get updates about Keep Moving Forward, upcoming shows, and other projects.</p>
         </div>
-        <form>
+        <form action="https://comicanthonyd.us9.list-manage.com/subscribe/post?u=0658108aed1d2cd653bdd46f8&id=c21656c2d3" target="_blank" method="POST">
           <div className="flex mx-auto md:w-1/2 w-full">
-            <input type="email" name="" placeholder="Email Address" className="px-5 py-3 bg-white border-b font-sans w-2/3"/>
-            <button className="px-5 py-3 bg-yellow-500 text-black font-bebas md:font-sans w-1/3">SUBSCRIBE</button>
+            <input type="email" name="EMAIL" placeholder="Email Address" className="px-5 py-3 bg-white border-b font-sans w-2/3"/>
+            <button className="px-5 py-3 bg-yellow-500 text-black font-bebas md:font-sans w-1/3" type="submit">SUBSCRIBE</button>
           </div>
         </form>
       </div>
