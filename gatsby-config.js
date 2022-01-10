@@ -50,6 +50,9 @@ module.exports = {
         },{
           name: `about-page`,
           endpoint: `about-page?populate=*`,
+        },{
+          name: `events-page`,
+          endpoint: `events-page?populate=*`,
         },
         'social-media',
         'contact-page',

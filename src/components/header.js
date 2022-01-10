@@ -19,8 +19,8 @@ const Header = ({ siteTitle }) => {
       <div className="">
         <Link to="/" className="text-white font-bebas uppercase text-2xl">Home</Link>
         <Link to="/about" className="text-white font-bebas uppercase text-2xl ml-5">About</Link>
-        <Link to="/podcast" className="text-white font-bebas uppercase text-2xl ml-5">KMF Podcast</Link>
-        <Link to="/#events" className="text-white font-bebas uppercase text-2xl ml-5">Shows</Link>
+        <Link to="/#podcast" className="text-white font-bebas uppercase text-2xl ml-5">KMF Podcast</Link>
+        <Link to="/shows" className="text-white font-bebas uppercase text-2xl ml-5">Shows</Link>
         <a href="https://www.patreon.com/kmfpodcast" target="_blank"  className="text-white font-bebas uppercase text-2xl ml-5">Patreon</a>
         <Link to="/contact" className="text-white font-bebas uppercase text-2xl ml-5">Contact</Link>
       </div>
