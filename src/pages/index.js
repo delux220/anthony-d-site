@@ -11,15 +11,17 @@ const IndexPage = () => {
 
   const social = data.strapiSocialMedia.data.attributes;
 
+  const podcast = data.strapiPodcast.data.attributes;
+
   return <Layout>
     <Seo title="Home" />
     <div className="bg-gradient-to-r from-gray-900 to-black">
       <div className="bg-contain lg:bg-fixed container mx-auto h-[80vh] md:max-h-screen md:h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/brushed.png')"}}>
         <div className="relative flex items-start justify-center md:items-center h-full">
-          <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto flex md:block justify-center items-center">
+          <div className="text-center mx-auto px-5 py-10 relative h-full md:h-auto">
           <h1 className="text-white font-sans text-5xl mb-5 font-bold hidden md:block">Anthony DiDomenico</h1>
-          <h3 className="text-white text-4xl md:text-xl font-sans block mt-3 md:mt-0 text-center mt-32">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
-          <div className="bg-gradient-to-b md:bg-none from-transparent to-black mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10 pb-5 md:pb-0 pt-5 md:pt-0" style={{bottom:'0px', left:0}}>
+          <h3 className="text-white text-2xl md:text-xl font-sans block mt-3 md:mt-0 text-center">Stand up Comedian &amp; Host of <span className="italic text-yellow-500 ">Keep Moving Forward</span></h3>
+          <div className="bg-gradient-to-b md:bg-none from-transparent to-black mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10 pb-5 md:pb-0 pt-5 md:pt-0" style={{bottom:0, left:0}}>
           <a href={social.Facebook} target="_blank">
             <img src="/fb.svg" className="w-5 h-5 mx-3"/>
           </a>
@@ -61,14 +63,14 @@ const IndexPage = () => {
           
           <div className="col-span-3 md:col-span-2  md:border-r border-white pb-0 md:pr-10">
             <h3 className="text-white mb-5">About Keep Moving Forward</h3>
-            <p className="text-gray-300 font-thin mb-8">Anthony DiDomenico and guests talk about over all wellness, weight loss, motivation, mental health, success, and how important it is to always keep moving forward.</p>
-            <a href="https://www.patreon.com/kmfpodcast" className="bg-yellow-500 text-black px-5 py-3  block text-center">Support KMF on Patreon</a>
+            <p className="text-gray-300 font-thin mb-8">{podcast.Description}</p>
+            <a href={social.Patreon} className="bg-yellow-500 text-black px-5 py-3  block text-center" target="_blank">Support KMF on Patreon</a>
           </div>
           <div class="col-span-3 md:col-span-1 md:pl-10 pt-5 md:pt-3">
-            <a href="https://open.spotify.com/show/4iew4PiRlzdqDmFoDMHxiT" className="text-yellow-300 block mb-3">Spotify</a>
-            <a href="https://www.iheart.com/podcast/256-the-ww-bro-podcast-w-antho-31073123/" className="text-yellow-300 block mb-3">iHeartRadio</a>
-            <a href="https://www.stitcher.com/show/keep-moving-forward-w-anthony-didomenico" className="text-yellow-300 block mb-3">Stitcher</a>
-            <a href="https://podcasts.apple.com/zw/podcast/keep-moving-forward-w-anthony-didomenico/id1342021363" className="text-yellow-300 block mb-3">iTunes</a>
+            <a href={podcast.Spotify} target="_blank" className="text-yellow-300 block mb-3">Spotify</a>
+            <a href={podcast.iTunes} target="_blank" className="text-yellow-300 block mb-3">iTunes</a>
+            <a href={podcast.iHeartRadio} target="_blank"  className="text-yellow-300 block mb-3">iHeartRadio</a>
+            <a href={podcast.Stitcher} target="_blank"  className="text-yellow-300 block mb-3">Stitcher</a>
           </div>
         </div>
       </div>
@@ -85,6 +87,31 @@ query MyQuery {
         Instagram
         TikTok
         Twitter
+        Patreon
+      }
+    }
+  }
+  strapiPodcast {
+    data {
+      attributes {
+        Title
+        Description
+        Link
+        Spotify
+        iHeartRadio
+        Stitcher
+        iTunes
+        CoverArt {
+          data {
+            attributes {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(quality: 95, width: 1000, height: 1000)
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

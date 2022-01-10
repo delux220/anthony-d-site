@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => {
         <Link to="/about" className="text-white font-bebas uppercase text-2xl ml-5">About</Link>
         <Link to="/#podcast" className="text-white font-bebas uppercase text-2xl ml-5">KMF Podcast</Link>
         <Link to="/shows" className="text-white font-bebas uppercase text-2xl ml-5">Shows</Link>
-        <a href="https://www.patreon.com/kmfpodcast" target="_blank"  className="text-white font-bebas uppercase text-2xl ml-5">Patreon</a>
+        <a href={social.Patreon} target="_blank"  className="text-white font-bebas uppercase text-2xl ml-5">Patreon</a>
         <Link to="/contact" className="text-white font-bebas uppercase text-2xl ml-5">Contact</Link>
       </div>
     </div>
@@ -44,9 +44,9 @@ const Header = ({ siteTitle }) => {
       <div>
       <Link to="/" className="text-white font-bebas uppercase text-2xl block">Home</Link>
       <Link to="/about" className="text-white font-bebas uppercase text-2xl block">About</Link>
-      <Link to="/podcast" className="text-white font-bebas uppercase text-2xl  block">KMF Podcast</Link>
-      <Link to="/#events" onClick={() => setOpen(false)}className="text-white font-bebas uppercase text-2xl block">Events</Link>
-      <a href="https://www.patreon.com/kmfpodcast" target="_blank"  className="text-white font-bebas uppercase text-2xl block">Patreon</a>
+      <Link to="/#podcast" className="text-white font-bebas uppercase text-2xl  block">KMF Podcast</Link>
+      <Link to="/shows" onClick={() => setOpen(false)}className="text-white font-bebas uppercase text-2xl block">Shows</Link>
+      <a href={social.Patreon} target="_blank"  className="text-white font-bebas uppercase text-2xl block">Patreon</a>
         
       <Link to="/contact" className="text-white font-bebas uppercase text-2xl block">Contact</Link>
 
@@ -88,6 +88,7 @@ query MyQuery5 {
         Instagram
         TikTok
         Twitter
+        Patreon
       }
     }
   }
