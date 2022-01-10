@@ -16,10 +16,10 @@ const IndexPage = () => {
     <div className="bg-gradient-to-r from-gray-900 to-black">
       <div className="bg-contain lg:bg-fixed container mx-auto h-[80vh] md:max-h-screen md:h-screen bg-bottom bg-no-repeat" style={{backgroundImage: "url('https://res.cloudinary.com/meshed-nyc/e_grayscale,q_auto,w_1200,c_fill/brushed.png')"}}>
         <div className="relative flex items-start justify-center md:items-center h-full">
-          <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto">
+          <div className=" md:text-center mx-auto px-5 py-10 relative h-full md:h-auto flex md:block justify-center items-center">
           <h1 className="text-white font-sans text-5xl mb-5 font-bold hidden md:block">Anthony DiDomenico</h1>
-          <h3 className="text-white font-sans block mt-3 md:mt-0">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
-          <div className="mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10" style={{bottom:'25px', left:0}}>
+          <h3 className="text-white text-4xl md:text-xl font-sans block mt-3 md:mt-0 text-center mt-32">Stand up Comedian &amp; Host of <span className="italic text-yellow-500">Keep Moving Forward</span></h3>
+          <div className="bg-gradient-to-b md:bg-none from-transparent to-black mt-5 md:pt-5 flex absolute md:relative justify-between md:justify-center w-full px-10 pb-5 md:pb-0 pt-5 md:pt-0" style={{bottom:'0px', left:0}}>
           <a href={social.Facebook} target="_blank">
             <img src="/fb.svg" className="w-5 h-5 mx-3"/>
           </a>
