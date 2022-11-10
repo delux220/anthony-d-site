@@ -39,9 +39,9 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
-       className="bg-gradient-to-r from-gray-900 to-black"
+       className="bg-gradient-to-r from-gray-900 to-black overflow-x-hidden"
       >
-        <main>{children}</main>
+        <main className=" overflow-x-hidden">{children}</main>
         <footer
           className="bg-black"
         >

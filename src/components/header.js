@@ -10,7 +10,7 @@ const Header = ({ siteTitle }) => {
 
   const [open, setOpen] = React.useState(false);
 
-  return <header className="absolute w-screen mx-auto  p-5 z-10">
+  return <header className="absolute w-full mx-auto  p-5 z-10">
     <div className="container mx-auto hidden md:block">
     <div className="flex justify-between">
       <div>

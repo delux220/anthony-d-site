@@ -19,6 +19,15 @@ function Seo({ description, lang, meta, title }) {
             attributes {
               SiteName
               Description
+              Image {
+                data {
+                  attributes {
+                    localFile {
+                      publicURL
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -29,6 +38,8 @@ function Seo({ description, lang, meta, title }) {
   const metaDescription = description || site.strapiSeo.data.attributes.Description
   const defaultTitle = site.strapiSeo.data.attributes.SiteName;
 
+  const imageUrl = site.strapiSeo.data.attributes.Image?site.strapiSeo.data.attributes.Image.data.attributes.localFile.publicURL:'';
+
   return (
     <Helmet
       htmlAttributes={{
@@ -37,6 +48,14 @@ function Seo({ description, lang, meta, title }) {
       title={`${title} | ${defaultTitle}`}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
+        {
+          name: 'og:image',
+          content: imageUrl
+        },
+        { 
+          name: 'twitter:image',
+          content: imageUrl
+        },
         {
           name: `description`,
           content: metaDescription,
