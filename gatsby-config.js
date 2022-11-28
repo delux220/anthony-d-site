@@ -41,7 +41,7 @@ module.exports = {
      {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://immense-inlet-26477.herokuapp.com/api`,
+        apiURL: `https://anthony.daveluke.dev/api`,
         queryLimit: 1000, // Defaults to 100
         collectionTypes: [{name: `event`, endpoint: `events?sort=DateTime:asc`}],
         singleTypes: [{
